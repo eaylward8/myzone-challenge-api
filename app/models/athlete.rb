@@ -7,4 +7,6 @@ class Athlete
   field :fname, type: String
   field :lname, type: String
   field :myzone_guid, type: String
+
+  has_many :moves
 end
