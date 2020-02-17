@@ -16,6 +16,7 @@ gem 'puma', '~> 3.11'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'httparty'
 gem 'mongoid', '~> 7.0.5'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
@@ -23,6 +24,8 @@ gem 'mongoid', '~> 7.0.5'
 
 group :development, :test do
   gem 'pry-byebug'
+  gem 'rubocop', '~> 0.79.0', require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :development do
