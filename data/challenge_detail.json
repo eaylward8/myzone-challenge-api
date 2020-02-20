@@ -1,0 +1,70 @@
+{
+  "leaderboard": [
+      {
+          "usrGUID": "95d34538-e49d-11e9-943f-ac1f6b49537a",
+          "score": "11,092 MEPs",
+          "sort": 11092,
+          "me": 1,
+          "name": "Rik"
+      },
+      {
+          "usrGUID": "2ee7ece4-e2f1-11e9-943f-ac1f6b49537a",
+          "score": "10,252 MEPs",
+          "sort": 10252,
+          "name": "dbrein"
+      },
+      {
+          "usrGUID": "923a525c-ed09-11e9-943f-ac1f6b49537a",
+          "score": "10,005 MEPs",
+          "sort": 10005,
+          "name": "ChipDa"
+      },
+      {
+          "usrGUID": "9bab99c7-ec79-11e9-943f-ac1f6b49537a",
+          "score": "9,560 MEPs",
+          "sort": 9560,
+          "name": "Zan"
+      },
+      {
+          "usrGUID": "ca28eb9b-e331-11e9-943f-ac1f6b49537a",
+          "score": "8,968 MEPs",
+          "sort": 8968,
+          "name": "Smitty"
+      },
+      {
+          "usrGUID": "6786af75-e2d8-11e9-943f-ac1f6b49537a",
+          "score": "8,276 MEPs",
+          "sort": 8276,
+          "name": "RyanMu"
+      },
+      {
+          "usrGUID": "4141e272-e4b1-11e9-943f-ac1f6b49537a",
+          "score": "7,903 MEPs",
+          "sort": 7903,
+          "name": "Denim"
+      },
+      {
+          "usrGUID": "f2fde533-e566-11e9-943f-ac1f6b49537a",
+          "score": "7,034 MEPs",
+          "sort": 7034,
+          "name": "JosephBa"
+      }
+  ],
+  "details": {
+      "guid": "daf4797f-ecf2-11e9-943f-ac1f6b49537a",
+      "title": "Unsober Mid-October SAT Challenge",
+      "message": "Rewards/penalties: 7-1 $150, 6-2 100, 5-3 50, 4 0, 8 pay for and take SAT like an asshole (must post score publicly).",
+      "start": "14 Oct 19",
+      "end": "13 Nov 19",
+      "target": 0,
+      "targetZone": null,
+      "chalCtIndex": "1",
+      "zones": "11111",
+      "user": "Erik Aylward",
+      "subtitle": " MEPs",
+      "tsStart": 1571011200,
+      "tsEnd": 1573603200,
+      "owner": "yes",
+      "goalType": "date"
+  }
+}
