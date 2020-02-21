@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'httparty'
 require 'json'
 
@@ -6,6 +8,7 @@ class MoveDownloader
 
   BASE_URL = 'https://www.myzonemoves.com/sessioncalls/movesbyguid'
   DATA_PATH = Rails.root.join('data')
+  ATHLETE_DATA_PATH = Rails.root.join(DATA_PATH, 'athletes')
   MOVES_BY_CHALLENGE_FILE = 'movesbychallenge.json'
 
   attr_reader :mbc_data, :owner_move_guids
@@ -30,7 +33,7 @@ class MoveDownloader
   end
 
   def download_file(owner, move_guid)
-    new_path = DATA_PATH.join(owner, "#{move_guid}.json")
+    new_path = ATHLETE_DATA_PATH.join(owner, "#{move_guid}.json")
     file = File.new(new_path, 'w+')
     file.write(move_json(move_guid)) # write GET response to file
     file.close
@@ -38,12 +41,12 @@ class MoveDownloader
   end
 
   def move_json(move_guid)
-    self.class.get(BASE_URL, { query: { guid: move_guid } })
+    self.class.get(BASE_URL, query: { guid: move_guid })
   end
 
   def file_exists?(owner, move_guid)
-    path = Rails.root.join(DATA_PATH, owner, "#{move_guid}.json")
-    File.exists?(path)
+    path = Rails.root.join(ATHLETE_DATA_PATH, owner, "#{move_guid}.json")
+    File.exist?(path)
   end
 end
 
