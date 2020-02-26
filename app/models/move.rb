@@ -14,9 +14,11 @@ class Move
   field :peak_hr, type: Integer
   field :myzone_guid, type: String
   field :date, type: Date
+  field :start, type: String
+  field :end, type: String
   field :timestamp, type: Integer
-  field :start, type: DateTime
-  field :end, type: DateTime
+  field :ts_start, type: DateTime
+  field :ts_end, type: DateTime
   field :zone_mins, type: Hash
   field :zone_meps, type: Hash
 
