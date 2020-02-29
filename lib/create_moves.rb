@@ -3,29 +3,9 @@
 require 'json'
 require 'pry-byebug'
 
+ATHLETE_DATA_PATH = Rails.root.join('data/athletes')
 
-ATHLETE_DATA_PATH = Rails.root.join('data', 'athletes')
-
-# athlete_dirs = Dir.glob("#{DATA_PATH}/**").select { |f| File.directory?(f) }
-
-# ad = athlete_dirs.first
-
-# move_files = Dir.children(ad)
-
-# move_files.each do |move_file|
-  # JSON.parse(move_file)
-  # binding.pry
-
-# end
-
-ZONE_KEYS = %w[
-  under_50
-  50_to_59
-  60_to_69
-  70_to_79
-  80_to_89
-  over_90
-].freeze
+challenge = Challenge.find_by(myzone_guid: 'daf4797f-ecf2-11e9-943f-ac1f6b49537a')
 
 ATHLETE_DATA_PATH.children.each do |athlete_path|
   moves = athlete_path.children
@@ -35,9 +15,6 @@ ATHLETE_DATA_PATH.children.each do |athlete_path|
   moves.each do |move|
     athlete = Athlete.find_by(lname: move['owner']['surname'])
     data = move['data'].first
-
-    # TODO: add challenge_id
-    # TODO: add uniqueness validation for myzone_guid
 
     athlete.moves.create(
       activity: data['activity'],
@@ -55,18 +32,9 @@ ATHLETE_DATA_PATH.children.each do |athlete_path|
       timestamp: data['timestamp'],
       ts_start: data['sStart'],
       ts_end: data['sEnd'],
-      zone_mins: ZONE_KEYS.zip(data['zoneMins']).to_h,
-      zone_meps: ZONE_KEYS.zip(data['zoneMEPs']).to_h
+      zone_mins: Move::ZONE_KEYS.zip(data['zoneMins']).to_h,
+      zone_meps: Move::ZONE_KEYS.zip(data['zoneMEPs']).to_h,
+      challenge: challenge
     )
-    binding.pry
   end
 end
-
-
-
-
-# class MoveCreator
-# end
-
-
-puts 'yo'

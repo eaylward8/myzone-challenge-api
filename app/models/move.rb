@@ -4,6 +4,15 @@ class Move
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  ZONE_KEYS = %w[
+    under_50
+    50_to_59
+    60_to_69
+    70_to_79
+    80_to_89
+    over_90
+  ].freeze
+
   field :activity, type: String
   field :meps, type: Integer
   field :duration, type: Integer
@@ -23,6 +32,9 @@ class Move
   field :zone_meps, type: Hash
 
   belongs_to :athlete
+  belongs_to :challenge
+
+  validates :myzone_guid, uniqueness: true
 end
 
 # {

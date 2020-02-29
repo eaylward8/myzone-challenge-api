@@ -40,3 +40,15 @@
     myzone_guid: 'ca28eb9b-e331-11e9-943f-ac1f6b49537a'
   },
 ].each { |attrs| Athlete.where(attrs).first_or_create }
+
+Challenge.where(
+  myzone_guid: 'daf4797f-ecf2-11e9-943f-ac1f6b49537a',
+  title: 'Unsober Mid-October SAT Challenge',
+  message: 'Rewards/penalties: 7-1 $150, 6-2 100, 5-3 50, 4 0, 8 pay for and take SAT like an asshole (must post score publicly).',
+  goal_type: 'date',
+  start: Date.parse('14 Oct 19'),
+  end: Date.parse('13 Nov 19'),
+  zones: '11111',
+  ts_start: 1571011200,
+  ts_end: 1573603200
+).first_or_create

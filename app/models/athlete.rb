@@ -9,4 +9,6 @@ class Athlete
   field :myzone_guid, type: String
 
   has_many :moves
+
+  validates :myzone_guid, uniqueness: true
 end
