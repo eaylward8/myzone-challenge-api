@@ -1,2 +1,16 @@
 MongoDB install:
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+Ideas for automating more of download/creation process:
+- Request to finishedchallenges endpoint
+  - Get challenge GUID
+- Request to challengedetail endpoint using challenge GUID
+  - Challenge details and leaderboard
+  - Leaderboard has user GUIDs for all participants
+- Request to movesbychallenge endpoint using challenge GUID
+  - This gives all moves by all members of the challenge, but doesn't have a lot of detail
+  - Get uNames and uGUIDs and find/create Athletes
+  - Get move GUIDs for next step
+- For each move GUID:
+  - Request to movesbyguid endpoint using move GUID
+  - Find/create Move (belongs to Athlete and Challenge)
