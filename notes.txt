@@ -14,3 +14,10 @@ Ideas for automating more of download/creation process:
 - For each move GUID:
   - Request to movesbyguid endpoint using move GUID
   - Find/create Move (belongs to Athlete and Challenge)
+
+
+Mongo Aggregations:
+https://engineering.universe.com/mongo-aggregations-in-5-minutes-b8e1d9c274bb
+
+sort2 = {'$sort': {'meps': -1}}
+Move.collection.aggregate([sort]).to_a
