@@ -21,3 +21,9 @@ https://engineering.universe.com/mongo-aggregations-in-5-minutes-b8e1d9c274bb
 
 sort2 = {'$sort': {'meps': -1}}
 Move.collection.aggregate([sort]).to_a
+
+Returns array of BSON::Documents with athlete IDs and mep totals, sorted from most to least
+Move
+  .collection
+  .aggregate([{'$group': {_id: '$athlete_id', total: {'$sum': '$meps'}}}, {'$sort': {'$meps': -1}}])
+  .each {|d| puts d}
