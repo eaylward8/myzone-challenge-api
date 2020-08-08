@@ -162,3 +162,31 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+production:
+  # Configure available database clients. (required)
+  clients:
+    # Defines the default client. (required)
+    default:
+      # Defines the name of the default database that Mongoid can connect to.
+      # (required).
+      database: myzone_challenge_api_production
+
+      # Provides the hosts the default client can connect to. Must be an array
+      # of host:port pairs. (required)
+      hosts:
+        - ea-cluster-1-shard-00-00.smkmi.gcp.mongodb.net:27017
+        - ea-cluster-1-shard-00-01.smkmi.gcp.mongodb.net:27017
+        - ea-cluster-1-shard-00-02.smkmi.gcp.mongodb.net:27017
+      options:
+        # The name of the user for authentication.
+        user: <%= ENV['DB_USER'] %>
+
+        # The password of the user for authentication.
+        password: <%= ENV['DB_PASSWORD'] %>
+
+        # The database or source to authenticate the user against. If the database
+        # specified above is not admin, admin MUST be specified here.
+        auth_source: admin
+
+        # All Atlas servers use SSL. (default: false)
+        ssl: true
